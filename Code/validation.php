@@ -17,7 +17,7 @@ function loggedin_check($session) {         //Check user is logged in
     else {
 
         $conn = connect_database();
-        $qry = "SELECT * FROM SESSION_USERS WHERE EMAIL='{$session['uname']}'; ";           
+        $qry = "SELECT * FROM SESSION_USER WHERE U_ID='{$session['uname']}' AND TYPE='{$session['type']}'; ";           
         $res = mysqli_query($conn, $qry);
         mysqli_close($conn);
         

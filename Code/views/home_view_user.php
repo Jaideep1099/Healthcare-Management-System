@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>NITC-HCMS</title>    
-<link rel="stylesheet" href="style/staff_style.css">
+<link rel="stylesheet" href="style/user_style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
                   <a class="nav-link" href="#profile">PROFILE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#logout">LOGOUT</a>
+                  <a class="nav-link" href="/logout">LOGOUT</a>
                 </li>
 
               </ul>
@@ -53,31 +53,17 @@
             <div class="activities-grid">
                 <!-- grid irem1 -->
                 <a href="#">
-                <div class="activities-grid-item drug" >
+                <div class="activities-grid-item appointment" >
                     
-                    <h1>Drug Stock</h1>
+                    <h1>Make Appointment</h1>
                     <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.</p>
                
                 </div>
                 </a>
                  <!-- grid irem2 -->
                  <a href="#">
-                 <div class="activities-grid-item billing">
-                    <h1>Billing</h1>
-                    <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.</p>
-                </div>
-                </a>
-                <!-- grid irem3 -->
-                <a href="#">
-                <div class="activities-grid-item order">
-                    <h1>Give Orders</h1>
-                    <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.</p>
-                </div>
-                </a>
-                <!-- grid irem4 -->
-                <a href="#">
-                <div class="activities-grid-item bloodbank">
-                    <h1>Blood Bank</h1>
+                 <div class="activities-grid-item medhistory">
+                    <h1>Medical History</h1>
                     <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.</p>
                 </div>
                 </a>
@@ -85,6 +71,7 @@
             </div>
         </div>
     </section>
+
     <!--------------------Social media--------------->
     <!-- <section id="social-media">
         <div class="container text-center">
