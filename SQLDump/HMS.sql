@@ -413,6 +413,29 @@ LOCK TABLES `PURCHASE_DATA` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `SESSION_USER`
+--
+
+DROP TABLE IF EXISTS `SESSION_USER`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SESSION_USER` (
+  `U_ID` varchar(50) NOT NULL,
+  PRIMARY KEY (`U_ID`),
+  CONSTRAINT `FK_SUUID` FOREIGN KEY (`U_ID`) REFERENCES `USER` (`U_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SESSION_USER`
+--
+
+LOCK TABLES `SESSION_USER` WRITE;
+/*!40000 ALTER TABLE `SESSION_USER` DISABLE KEYS */;
+/*!40000 ALTER TABLE `SESSION_USER` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `STAFF`
 --
 
@@ -533,4 +556,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-23 18:23:19
+-- Dump completed on 2020-12-24 12:26:13
