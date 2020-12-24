@@ -74,6 +74,9 @@
                 <span></span>
                 <label>Password</label>
             </div>
+            <div class="error">
+                <?=$err_msg?><br><br>
+            </div>
             <input type="submit" value="SignUp">
             <div class="signup_link">
                 Already a member? <a href="/login">Login</a>
