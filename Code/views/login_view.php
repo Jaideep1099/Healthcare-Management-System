@@ -34,7 +34,7 @@
                 Not a member?<a href="/signup">Signup</a>
             </div>
             <div class="signup_link">
-                Supplier?<a href="/login_supplier">Login here</a>
+                Supplier?<a href="/supplier/login">Login here</a>
             </div>
         </form>
     </div>

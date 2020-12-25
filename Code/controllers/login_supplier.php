@@ -39,7 +39,7 @@ if(isset($_POST['mob'])) {
             if(!$res)
                 die(mysqli_error($conn));
             mysqli_close($conn);
-            header("Location: /home");
+            header("Location: /supplier/home");
         }
         else {
             mysqli_close($conn);

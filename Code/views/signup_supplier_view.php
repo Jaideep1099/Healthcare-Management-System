@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>HMS : Supplier-Signup</title>
-    <link rel="stylesheet" href="../style/login.css">
+    <link rel="stylesheet" href="/style/login.css">
 </head>
 <body>
     <div class="center">
@@ -49,7 +49,7 @@
             </div>
             <input type="submit" value="SignUp">
             <div class="signup_link">
-                Already registered? <a href="/login_supplier">Login</a>
+                Already registered? <a href="/supplier/login">Login</a>
             </div>
         </form>
     </div>

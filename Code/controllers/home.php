@@ -10,8 +10,8 @@ if(!loggedin_check($_SESSION)) {
 else{
     
     if($_SESSION['type']=='S')
-        require 'views/home_view_staff.php';
+        require 'views/home_staff_view.php';
     else
-        require 'views/home_view_user.php';
+        require 'views/home_user_view.php';
 }
 ?>

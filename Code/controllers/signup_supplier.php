@@ -50,7 +50,7 @@ if(isset($_POST['fname'])) {
                 die("Data insertion failed : ".mysqli_error($conn));
             }
             mysqli_close($conn);
-            header("Location: /login_supplier");
+            header("Location: /supplier/login");
         }
     }
 
