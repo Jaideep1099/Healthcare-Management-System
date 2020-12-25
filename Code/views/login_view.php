@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
-    <img src="images/loginBack.jpg" id="background">
     <div class="center">
         <h1>Login</h1>
         <form method="POST" action="">
@@ -22,8 +21,9 @@
             </div>
             <div class="centered">
                 <input type="radio" name="type" value="U" required> User
+                <!--<input type="radio" name="type" value="D" required> Doctor -->
                 <input type="radio" name="type" value="S" required> Staff
-                <br><br>
+                <br>
             </div>
             <div class="error">
                 <?=$err_msg?><br><br>
@@ -32,6 +32,9 @@
             <input type="submit" value="Login">
             <div class="signup_link">
                 Not a member?<a href="/signup">Signup</a>
+            </div>
+            <div class="signup_link">
+                Supplier?<a href="/login_supplier">Login here</a>
             </div>
         </form>
     </div>

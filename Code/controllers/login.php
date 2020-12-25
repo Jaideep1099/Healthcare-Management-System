@@ -21,6 +21,8 @@ if(isset($_POST['uname'])) {
 
         if($_POST['type']=='S'){
 
+            //Check if claim of being staff is true
+
             $qry = "SELECT STAFF_ID FROM STAFF WHERE 
                 STAFF_ID='{$_POST['uname']}';";
 

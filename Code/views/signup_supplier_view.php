@@ -2,18 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title>HMS : Signup</title>
-    <link rel="stylesheet" href="style/login.css">
+    <title>HMS : Supplier-Signup</title>
+    <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
     <div class="center">
-        <h1>Signup</h1>
+        <h1>Supplier SignUp</h1>
         <form method="post" action="">
-            <div class="txt_field">
-                <input type="text" name="u_id" maxlength="50" required>
-                <span></span>
-                <label>Username</label>
-            </div>
             <div class="txt_field">
                 <input type="text" name="fname" maxlength="100" required>
                 <span></span>
@@ -23,30 +18,6 @@
                 <input type="text" name="lname" maxlength="100" required>
                 <span></span>
                 <label>LastName</label>
-            </div>
-            <div>
-                <input type="radio" name="sex" value="M" required> Male 
-                <input type="radio" name="sex" value="F" required> Female
-                <span></span>
-            </div>
-            <div class="txt_field">
-                <input type="date" name="dob" required>
-                <span></span>
-                <label>D.O.B</label>
-            </div>
-            <div>
-            <label>Blood Group</label>
-                <select name="bgroup" required>
-                    <option value="A+"> A+
-                    <option value="A-"> A-
-                    <option value="B+"> B+
-                    <option value="B-"> B-
-                    <option value="AB+"> AB+
-                    <option value="AB-"> AB-
-                    <option value="O+"> O+
-                    <option value="O-"> O-
-                </select>
-                <span></span>
             </div>
             <div class="txt_field">
                 <input type="text" name="addline1" maxlength="255" required>
@@ -78,7 +49,7 @@
             </div>
             <input type="submit" value="SignUp">
             <div class="signup_link">
-                Already a member? <a href="/login">Login</a>
+                Already registered? <a href="/login_supplier">Login</a>
             </div>
         </form>
     </div>
