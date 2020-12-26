@@ -69,6 +69,11 @@
                 <label>Mobile No</label>
             </div>
             <div class="txt_field">
+                <input type="number" min="1000000000" max="9999999999" name="emg" required>
+                <span></span>
+                <label>Emergency Contact</label>
+            </div>
+            <div class="txt_field">
                 <input type="password" name="pwd" required>
                 <span></span>
                 <label>Password</label>

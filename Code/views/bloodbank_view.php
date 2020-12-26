@@ -32,7 +32,7 @@
         <center>
             <br><br><br>
             <div class="container p-5 my-3 bg-primary text-white" >
-            <h1>AVIALABLE UNITS</h1>
+            <h1>AVAILABLE UNITS</h1>
             <form>
                 <br><br>
                 <div class="form-group row d-inline-flex p-5">

@@ -49,7 +49,14 @@ if(isset($_POST['u_id'])) {
                 '$hashed_pwd');";
 
             $res = mysqli_query($conn,$qry);
-            if(!$res){
+
+            if($res){
+                $qry = "INSERT INTO PATIENT VALUES ('{$_POST['u_id']}',{$_POST['emg']});" ;
+                $res = mysqli_query($conn,$qry);
+                if(!$res)
+                    die("Emg.Contact insertion failed: [$qry] ".mysqli_error($conn));
+            }
+            else{
                 die("Data insertion failed : ".mysqli_error($conn));
             }
             mysqli_close($conn);
