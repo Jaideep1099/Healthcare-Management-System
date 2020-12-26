@@ -9,6 +9,7 @@ $Routes = [
     'medhistory' => 'controllers/medhistory.php',
     'profile' => 'controllers/profile.php',
     'bloodbank' => 'controllers/bloodbank.php',
+    'order' => 'controllers/order.php',
     'drugstock' => 'controllers/drugstock.php',
     'logout' => 'controllers/logout.php',
 

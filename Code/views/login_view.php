@@ -20,9 +20,11 @@
                 <label>Password</label>
             </div>
             <div class="centered">
-                <input type="radio" name="type" value="U" required> User
+                <input type="radio" name="type" value="U" id="user" required>
+                <label for="user">User</label>
                 <!--<input type="radio" name="type" value="D" required> Doctor -->
-                <input type="radio" name="type" value="S" required> Staff
+                <input type="radio" name="type" value="S" id="staff" required>
+                <label for="staff">Staff</label>
                 <br>
             </div>
             <div class="error">
