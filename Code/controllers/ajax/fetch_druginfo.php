@@ -8,6 +8,8 @@ $qry = "SELECT * FROM DRUG_COMPOSITION WHERE DRUG_ID={$_POST['id']};";
 
 $res = mysqli_query($conn,$qry);
 
+mysqli_close($conn);
+
 if($res){
     $response = "";
     while($row = mysqli_fetch_assoc($res)){
