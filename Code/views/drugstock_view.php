@@ -1,11 +1,26 @@
-<?php
-$link = mysqli_connect("localhost","root","","hms") or die(mysqli_connect_error());
-?>
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script type="text/javascript">
+      function fetchDrugInfo(id) {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+          if(this.readyState == 4 && this.status == 200){
+            document.getElementById("temp").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("POST", "/ajax/fetchdruginfo", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("id="+id);
+      }
+
+        function abc(id){
+            console.log(id);
+            document.getElementById('temp').textContent = id;
+          }
+    </script>
     <style>
       @charset "UTF-8";
       @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
@@ -188,12 +203,10 @@ $link = mysqli_connect("localhost","root","","hms") or die(mysqli_connect_error(
     	</thead>
     	<tbody>
         <?php
-          $sel = mysqli_query($link,"select * from drug_view");
-
   				while($arr = mysqli_fetch_assoc($sel))
   				{
   					echo "<tr>";
-  						echo "<td onclick='abc(".$arr['DRUG_ID'].")'><a href='#popup1' style='text-decoration: none; color: inherit'>".$arr['DRUG_NAME']."</a></td>";
+  						echo "<td onclick='fetchDrugInfo(".$arr['DRUG_ID'].")'><a href='#popup1' style='text-decoration: none; color: inherit'>".$arr['DRUG_NAME']."</a></td>";
   						echo "<td>".$arr['MANUFACTURER']."</td>";
   						echo "<td>".$arr['BATCH']."</td>";
   						echo "<td>".$arr['QNT']."</td>";
@@ -203,17 +216,11 @@ $link = mysqli_connect("localhost","root","","hms") or die(mysqli_connect_error(
 
   				}
         ?>
-
-        <script type="text/javascript">
-          function abc(id){
-            console.log(id);
-            document.getElementById('temp').textContent = id;
-          }
-        </script>
-
-        <div id="popup1" class="overlay">
+    	</tbody>
+    </table>
+    <div id="popup1" class="overlay">
           <div class="popup">
-            <h2 id='temp'><?php echo $temp ?></h2>
+            <h2 id='temp'></h2>
             <a class="close" href="#">&times;</a>
             <div class="content">
               Thank to pop me out of that button, but now i'm done so you can close this window.
@@ -221,7 +228,6 @@ $link = mysqli_connect("localhost","root","","hms") or die(mysqli_connect_error(
           </div>
         </div>
 
-    	</tbody>
-    </table>
+      <div id="druginfo"></div>
   </body>
 </html>

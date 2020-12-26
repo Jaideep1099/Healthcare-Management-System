@@ -52,7 +52,7 @@
             <h1 class="title">Services</h1>
             <div class="activities-grid">
                 <!-- grid irem1 -->
-                <a href="#">
+                <a href="/drugstock">
                 <div class="activities-grid-item drug" >
                     
                     <h1>Drug Stock</h1>
