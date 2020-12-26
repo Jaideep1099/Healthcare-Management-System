@@ -5,6 +5,7 @@ $Routes = [
     'login' => 'controllers/login.php',
     'signup'=> 'controllers/signup.php',
     'home' => 'controllers/home.php',
+    'makeappointment'=> 'controllers/makeappointment.php',
     'medhistory' => 'controllers/medhistory.php',
     'profile' => 'controllers/profile.php',
     'bloodbank' => 'controllers/bloodbank.php',

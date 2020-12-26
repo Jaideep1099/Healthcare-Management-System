@@ -11,25 +11,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 	<!-- BASE CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/vendors.css" rel="stylesheet">
-	<link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+	<link href="/style/appointment/bootstrap.min.css" rel="stylesheet">
+	<link href="/style/appointment/style.css" rel="stylesheet">
+	<link href="/style/appointment/vendors.css" rel="stylesheet">
+	<link href="/style/appointment/icon_fonts/css/all_icons_min.css" rel="stylesheet">
 
     <!-- SPECIFIC CSS -->
-    <link href="css/date_picker.css" rel="stylesheet">
+    <link href="/style/appointment/date_picker.css" rel="stylesheet">
 
 </head>
 
 <body>
 
 	<div id="page">
-		<nav id="menu" class="main-menu"></nav>
+		<nav id="menu" class="main-menu">
+		</nav>
 
 	<main class="theia-exception">
 		<div id="results">
 			<div class="container">
 				<div class="row">
+				<ul>
+				<a href="/home"><li>HOME</li></a>
+				</ul>
 					<div class="col-md-6">
 						<h2 style="color:white;"><strong>Book an Appointment</strong></h2>
 					</div>
@@ -53,7 +57,7 @@
 						<small>Head Doctor</small>
 						<h3>Dr. Jango</h3>
 						<p>NIT Calicut</p>
-						<span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
+						
 						<ul>
 							<li><a href="">Select</a></li>
 						</ul>
@@ -158,15 +162,15 @@
 	<!-- Back to top button -->
 
 	<!-- COMMON SCRIPTS -->
-	<script src="js/jquery-3.5.1.min.js"></script>
-	<script src="js/common_scripts.min.js"></script>
-	<script src="js/functions.js"></script>
+	<script src="/scripts/jquery-3.5.1.min.js"></script>
+	<script src="/scripts/common_scripts.min.js"></script>
+	<script src="/scripts/functions.js"></script>
 
 	<!-- SPECIFIC SCRIPTS -->
 	<!-- <script src="http://maps.googleapis.com/maps/api/js"></script>	 -->
-	<!-- <script src="js/markerclusterer.js"></script>
-    <script src="js/map_listing.js"></script>
-    <script src="js/infobox.js"></script> -->
+	<!-- <script src="/scripts/markerclusterer.js"></script>
+    <script src="/scripts/map_listing.js"></script>
+    <script src="/scripts/infobox.js"></script> -->
 
 </body>
 </html>

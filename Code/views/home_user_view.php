@@ -52,7 +52,7 @@
             <h1 class="title">Services</h1>
             <div class="activities-grid">
                 <!-- grid irem1 -->
-                <a href="#">
+                <a href="/makeappointment">
                 <div class="activities-grid-item appointment" >
                     
                     <h1>Make Appointment</h1>
