@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>HMS : Supplier Login</title>
     <link rel="stylesheet" href="/style/login.css">
+    <link rel="stylesheet" href="/style/medhistory_style.css">
 </head>
 <body>
+    <iframe src="/style/waves.html" frameborder="0" class="main-frame"></iframe>
     <div class="center">
         <h1>Supplier Login</h1>
         <form method="POST" action="">

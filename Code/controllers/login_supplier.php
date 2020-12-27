@@ -24,9 +24,10 @@ if(isset($_POST['mob'])) {
         
         $res = mysqli_query($conn, $qry);
 
-        $res = mysqli_fetch_assoc($res);
-        
         if($res)
+            $res = mysqli_fetch_assoc($res);
+        
+        if($res!=null)
         {                           //Login Successful. Setting up session
             session_start();
             $_SESSION['uname'] = $res['SUP_ID'];

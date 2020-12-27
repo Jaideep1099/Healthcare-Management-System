@@ -28,7 +28,8 @@ if(isset($_POST['uname'])) {
 
             $res = mysqli_query($conn, $qry);
 
-            $res = mysqli_fetch_assoc($res);
+            if($res)
+                $res = mysqli_fetch_assoc($res);
 
             if(!$res) {
                 mysqli_close($conn);
