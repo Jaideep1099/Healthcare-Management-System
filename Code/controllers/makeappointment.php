@@ -2,6 +2,7 @@
 
 require_once "validation.php";
 require_once "connection.php";
+require_once "functions.php";
 
 session_start();
 
@@ -15,19 +16,9 @@ else{
             $err_msg = "Enter all required data";
         }
         else {
-            $date=date_create($_POST['b_date'].$_POST['b_time']);
-            $date = date_format($date,"Y-m-d");
-
-            if(strstr($_POST['b_time']," am")){
-                $time = rtrim($_POST['b_time']," am");
-                $time .= ":00";
-            }else{
-                $time = rtrim($_POST['b_time']," pm");
-                $time .= ":00";
-                $time = new DateTime($time);
-                $time->add(new DateInterval('PT12H0M00S'));
-                $time = $time->format('H:i:s');
-            }
+            $date=dateToDBFormat($_POST['b_date']);
+            $time=timeToDBFormat($_POST['b_time']);
+            
             $conn = connect_database();
             $qry = "INSERT INTO CONSULTATION (PAT_ID, STAFF_ID, DATE, TIME) VALUES (
                 '{$_SESSION['uname']}', '{$_POST['doc_id']}', '{$date}', '{$time}');";
