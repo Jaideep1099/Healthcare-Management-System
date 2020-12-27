@@ -10,6 +10,21 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+      function acknowledgeDelivery(ord_id, uname) {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+          if(this.readyState == 4 && this.status == 200){
+            document.getElementById("b"+ord_id).style.display = "none";
+          }
+        };
+        xhttp.open("POST", "/ajax/acksupply", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("ord_id="+ord_id+"&u_id="+uname);
+      }
+
+    </script>
   </head>
   <body>
     <!-- -------------------------------Navbar------------------------------- -->
@@ -100,10 +115,10 @@
 </section>
 
 
-<!-- --------------------------------Previous orders ----------------------------->
+<!-- -------------------------------- orders yet to be supplied ----------------------------->
 <section id="prev">
     <!-- <h1><span class="blue">&lt;</span><span class="blue">&gt;</span> <span class="yellow"></pan></h1> -->
-        <h2>Orders History</h2>
+        <h2>Orders</h2>
         <br>
         <table class="container2">
             <thead>
@@ -129,7 +144,47 @@
         </table>
 
 </section>
+<!-- --------------------------------Previous orders ----------------------------->
+<section id="prev">
+    <!-- <h1><span class="blue">&lt;</span><span class="blue">&gt;</span> <span class="yellow"></pan></h1> -->
+        <h2>Orders Fulfilled</h2>
+        <br>
+        <table class="container2">
+            <thead>
+                <tr>
+                    <th><h1>Order Id</h1></th>
+                    <th><h1>Supplier</h1></th>
+                    <th><h1>Drug</h1></th>
+                    <th><h1>Order Time</h1></th>
+                    <th><h1>Ordered Quantity</h1></th>
+                    <th><h1>Fullfillment Time</h1></th>
+                    <th><h1>Supplied Quantity</h1></th>
+                    <th><h1>Price</h1></th>
+                    <th><h1></h1></th>
+                </tr>
+            </thead>
+            <tbody>
+              <?php while ($row = mysqli_fetch_assoc($supplies)) { ?>
+                <tr>
+                    <td><?=$row['ORD_ID']?></td>
+                    <td><?=$row['SUP_FNAME']." ".$row['SUP_LNAME']?></td>
+                    <td><?=$row['DRUG_NAME']?></td>
+                    <td><?=$row['O_DATE']?></td>
+                    <td><?=$row['O_QUANTITY']?></td>
+                    <td><?=$row['S_DATE']?></td>
+                    <td><?=$row['QUANTITY']?></td>
+                    <td><?=$row['EST_PRC']?></td>
+                    <td>
+                      <?php if($row['DELIVERED']==0) {?>
+                        <button id="b<?=$row['ORD_ID']?>" onclick="acknowledgeDelivery('<?=$row['ORD_ID']?>','<?=$_SESSION['uname']?>')"> Acknowledge</button>
+                      <?php } ?>
+                    </td>
+                </tr>
+              <?php } ?>
+            </tbody>
+        </table>
 
+</section>
 <!--------------footer---------->
 <section id="footer">
     <!-- <img src="images/waves2.png" class="footer-img"> -->
@@ -151,7 +206,6 @@
         </div>
     </div>
 </section>
-
     <script src="scripts/order.js"></script>
   </body>
 </html>

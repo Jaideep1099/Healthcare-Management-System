@@ -10,5 +10,46 @@ if(!loggedin_check($_SESSION)) {
 }
 else{
 
+    if(isset($_POST['doc_id'])){
+        if(empty_check($_POST)){
+            $err_msg = "Enter all required data";
+        }
+        else {
+            $date=date_create($_POST['b_date'].$_POST['b_time']);
+            $date = date_format($date,"Y-m-d");
+
+            if(strstr($_POST['b_time']," am")){
+                $time = rtrim($_POST['b_time']," am");
+                $time .= ":00";
+            }else{
+                $time = rtrim($_POST['b_time']," pm");
+                $time .= ":00";
+                $time = new DateTime($time);
+                $time->add(new DateInterval('PT12H0M00S'));
+                $time = $time->format('H:i:s');
+            }
+            $conn = connect_database();
+            $qry = "INSERT INTO CONSULTATION (PAT_ID, STAFF_ID, DATE, TIME) VALUES (
+                '{$_SESSION['uname']}', '{$_POST['doc_id']}', '{$date}', '{$time}');";
+            $res = mysqli_query($conn,$qry);
+            if(!$res){
+                $err_msg = "Booking Failed. Probably the time is booked by someone else";
+            }else {
+                $err_msg = "Booking Successfull";
+            }
+            mysqli_close($conn);
+        }
+    }
+
+    $conn = connect_database();
+    $qry = "SELECT STAFF_ID,FNAME,LNAME,MOB_NO,SHIFT_START,SHIFT_END FROM STAFF S, USER U 
+            WHERE S.STAFF_ID=U.U_ID AND S_TYPE='D' AND STAFF_ID != '{$_SESSION['uname']}';";
+    $doctors = mysqli_query($conn,$qry);
+
+    if(!$doctors)
+        die(mysqli_error($conn));
+
+    mysqli_close($conn);
+
     require "views/makeappointment_view.php";
 }

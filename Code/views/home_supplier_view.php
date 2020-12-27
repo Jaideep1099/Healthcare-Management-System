@@ -72,6 +72,7 @@
                             <th><h3>Quantity</h3></th>
                             <th><h3>Price</h3></th>
                             <th><h3>Client</h3></th>
+                            <th><h3>Delivered</h3></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,6 +85,7 @@
                             <td><?=$row['QUANTITY']?></td>
                             <td><?=$row['EST_PRC']?></td>
                             <td><?=$row['STAFF_ID']?></td>
+                            <td><?= ($row['DELIVERED'])?"Yes":"No"; ?></td>
                         </tr>
 
                     <?php } ?>

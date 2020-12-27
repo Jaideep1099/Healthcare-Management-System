@@ -38,10 +38,17 @@ else{
 
         $conn = connect_database();
         $qry = "SELECT ORD_ID,SUP_FNAME,SUP_LNAME,DRUG_NAME,O_DATE,O_QUANTITY FROM ORDERS O, SUPPLIER S, DRUG_DATA D 
-            WHERE O.SUP_ID=S.SUP_ID AND O.DRUG_ID = D.DRUG_ID ORDER BY O_DATE DESC;";
+            WHERE O.SUP_ID=S.SUP_ID AND O.DRUG_ID = D.DRUG_ID AND ORD_ID NOT IN (SELECT ORD_ID FROM SUPPLIES) ORDER BY O_DATE DESC;";
 
         $orders = mysqli_query($conn,$qry);  
         if(!$orders)
+            die(mysqli_error($conn));
+
+        $qry = "SELECT O.ORD_ID,SUP_FNAME,SUP_LNAME,DRUG_NAME,O_DATE,O_QUANTITY, DELIVERED, S_DATE, QUANTITY, EST_PRC FROM ORDERS O, SUPPLIER S, DRUG_DATA D, SUPPLIES SS 
+            WHERE O.SUP_ID=S.SUP_ID AND O.DRUG_ID = D.DRUG_ID AND SS.ORD_ID = O.ORD_ID ORDER BY O_DATE DESC;";
+
+        $supplies = mysqli_query($conn,$qry);  
+        if(!$supplies)
             die(mysqli_error($conn));
 
         $qry = "SELECT SUP_ID,SUP_FNAME,SUP_LNAME FROM SUPPLIER ;";

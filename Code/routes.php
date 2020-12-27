@@ -20,7 +20,8 @@ $Routes = [
     'supplier/orderview' => 'controllers/orderview_supplier.php',
     'supplier/logout' => 'controllers/logout_supplier.php',
 
-    'ajax/fetchdruginfo' => 'controllers/ajax/fetch_druginfo.php'
+    'ajax/fetchdruginfo' => 'controllers/ajax/fetch_druginfo.php',
+    'ajax/acksupply' => 'controllers/ajax/ack_supply.php'
     
 ];
 
