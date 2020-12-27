@@ -11,7 +11,7 @@
     <!------------------------Navbar---------------------------->
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><img src="/images/nitc-logo.png"></a>
+            <a class="navbar-brand" href="#"><img src="../images/nitc-logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="#profile">PROFILE</a>
+                  <a class="nav-link" href="home">HOME</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="logout">LOGOUT</a>
@@ -31,68 +31,38 @@
           </nav>
     </section>
 
-    <section class="features-main">
-        <div class="maincontainer grid">
-            <div class="card flex">
-                <table class="table-container">
-                    <caption class="new-caption">NEW ORDERS</caption>
-                    <thead>
-                        <tr>
-                            <th><h3>Order ID</h3></th>
-                            <th><h3>Drug ID | Name</h3></th>
-                            <th><h3>Date</h3></th>
-                            <th><h3>Quantity</h3></th>
-                            <th><h3>Client</h3></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while ($row = mysqli_fetch_assoc($orders)) { ?>
-
-                        <tr>
-                            <td><a href="orderview?o_id=<?=$row['ORD_ID']?>" class="ord-link"><?=$row['ORD_ID']?></a></td>
-                            <td><?=$row['DRUG_ID']." | ".$row['DRUG_NAME']?></td>
-                            <td><?=$row['O_DATE']?></td>
-                            <td><?=$row['O_QUANTITY']?></td>
-                            <td><?=$row['STAFF_ID']?></td>
-                        </tr>
-
-                        <?php } ?>
-                        
-                    </tbody>
-                </table>
+    <section class="ord-main">
+        <form method="POST" action="" name="supplyform">
+        <div class="ord-container ord-grid ord-grid-3">
+            <div class="ord-card ord-flex">
+                <h3>Order ID : <?=$ord_id?></h3>
             </div>
-            <div class="card flex">
-                <table class="table-container">
-                    <caption class="fulfilled-caption">FULFILLED ORDERS</caption>
-                    <thead>
-                        <tr>
-                            <th><h3>Order ID</h3></th>
-                            <th><h3>Drug ID</h3></th>
-                            <th><h3>Date</h3></th>
-                            <th><h3>Quantity</h3></th>
-                            <th><h3>Price</h3></th>
-                            <th><h3>Client</h3></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php while ($row = mysqli_fetch_assoc($F_orders)) { ?>
-
-                        <tr>
-                            <td><?=$row['ORD_ID']?></td>
-                            <td><?=$row['DRUG_ID']." | ".$row['DRUG_NAME']?></td>
-                            <td><?=$row['S_DATE']?></td>
-                            <td><?=$row['QUANTITY']?></td>
-                            <td><?=$row['EST_PRC']?></td>
-                            <td><?=$row['STAFF_ID']?></td>
-                        </tr>
-
-                    <?php } ?>
-                        
-                    </tbody>
-                </table>
+            <div class="ord-card ord-flex">
+                <h3>Staff ID : <?=$orderdata['STAFF_ID']?></h3>
             </div>
+            <div class="ord-card ord-flex">
+                <h3>Order Date : <?=$orderdata['O_DATE']?></h3>
+            </div>
+            <div class="ord-card ord-flex">
+                <h3>Drug ID|Name|Manufacturer : <?=$orderdata['DRUG_ID']."|".$orderdata['DRUG_NAME']."|".$orderdata['MANUFACTURER']?> </h3>
+                <h3>&nbsp; [ Quantity : <?=$orderdata['O_QUANTITY']?> ] </h3>
+            </div>
+            
+            <div class="ord-card ord-flex">
+                <h3 class="ord-text"> Quantity Supplied</h3>
+                <input class="ord-input" type="number" name="qty" required>
+            </div>
+            <div class="ord-card ord-flex">
+                <h3 class="ord-text">Estimated price</h3>
+                <input class = "ord-input" type="number" name="prc" required>
+            </div>
+            <div class="ord-card ord-flex">
+                <input type ="submit" value="Supply"/>
+            </div>
+            </form>
         </div>
     </section>
+    <p class="error"><?=$err_msg?></p>
 
     <section class="blank">
 

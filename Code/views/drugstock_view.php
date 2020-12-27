@@ -188,8 +188,8 @@
     </style>
   </head>
   <body>
+    <a href="/home" style="color:white; text-decoration:none;">HOME</a>
     <h1><span class="blue"></span>Drug Stock<span class="blue"></span></h1>
-
     <table class="container">
     	<thead>
     		<tr>
@@ -223,7 +223,7 @@
             <h2 id='temp'></h2>
             <a class="close" href="#">&times;</a>
             <div class="content">
-              Thank to pop me out of that button, but now i'm done so you can close this window.
+              You can close this window by clicking 'x' on top left.
             </div>
           </div>
         </div>
