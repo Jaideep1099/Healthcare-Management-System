@@ -15,10 +15,10 @@
 </head>
 
 <body>
-
     <main id="pageContentArea">
         <div class="blog-main-slider color-white text-center" style="background-image:url('/style/billing/assets/img/bg.jpg');">
-            <div class="container">
+        <a href="/home" style="text-align: left;">HOME</a>
+        <div class="container">
                 <h1>ORDERS</h1>
             </div>
 
