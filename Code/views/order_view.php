@@ -18,7 +18,6 @@
           if(this.readyState == 4 && this.status == 200){
             document.getElementById("b"+ord_id).style.display = "none";
           }
-          alert(this.responseText);
         };
         xhttp.open("POST", "/ajax/acksupply", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

@@ -44,8 +44,25 @@
                 <h3>Order Date : <?=$orderdata['O_DATE']?></h3>
             </div>
             <div class="ord-card ord-flex">
-                <h3>Drug ID|Name|Manufacturer : <?=$orderdata['DRUG_ID']."|".$orderdata['DRUG_NAME']."|".$orderdata['MANUFACTURER']?> </h3>
-                <h3>&nbsp; [ Quantity : <?=$orderdata['O_QUANTITY']?> ] </h3>
+                <table class="sup-table-container">
+                <thead>
+                    <tr>
+                        <th><h3>Name</h3></th>
+                        <th><h3>Drug ID</h3></th>
+                        <th><h3>Manufacturer</h3></th>
+                        <th><h3>Quantity</h3></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?=$orderdata['DRUG_NAME']?></td>
+                        <td><?=$orderdata['DRUG_ID']?></td>
+                        <td><?=$orderdata['MANUFACTURER']?></td>
+                        <td><?=$orderdata['O_QUANTITY']?></td>
+                    </tr>
+
+                </tbody>
+            </table>
             </div>
             
             <div class="ord-card ord-flex">
@@ -57,7 +74,7 @@
                 <input class = "ord-input" type="number" name="prc" required>
             </div>
             <div class="ord-card ord-flex">
-                <input type ="submit" value="Supply"/>
+                <input class="ord-button" type ="submit" value="Supply"/>
             </div>
             </form>
         </div>
