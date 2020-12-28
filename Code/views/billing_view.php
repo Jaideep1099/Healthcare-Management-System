@@ -17,7 +17,7 @@
 <body>
     <main id="pageContentArea">
         <div class="blog-main-slider color-white text-center" style="background-image:url('/style/billing/assets/img/bg.jpg');">
-        <a href="/home" style="text-align: left;">HOME</a>
+        <p style="text-align: left;"><a href="/home">HOME</a></p>
         <div class="container">
                 <h1>ORDERS</h1>
             </div>
