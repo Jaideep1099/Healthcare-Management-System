@@ -47,7 +47,7 @@
                         </div>
                         <div class="data">
                             <h4>Last Name</h4>
-                            <p><?= $profile['SUP_FNAME'] ?></p>
+                            <p><?= $profile['SUP_LNAME'] ?></p>
 
                         </div>
                     </div>
