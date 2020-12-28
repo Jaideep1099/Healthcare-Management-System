@@ -12,6 +12,7 @@ $Routes = [
     'order' => 'controllers/order.php',
     'drugstock' => 'controllers/drugstock.php',
     'billing' => 'controllers/billing.php',
+    'patient' => 'controllers/patient.php',
     'logout' => 'controllers/logout.php',
 
     'supplier' => 'controllers/home_supplier.php',

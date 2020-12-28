@@ -39,6 +39,17 @@ else{
     }
     else if($_SESSION['type']=='S')
         require 'views/home_staff_view.php';
+    else if($_SESSION['type']=='D'){
+
+        $date = date('Y-m-d');
+        $time = date('h:m:s');
+        $conn = connect_database();
+        $qry = "SELECT PAT_ID,DATE,TIME,SEX,DOB FROM CONSULTATION C, USER U WHERE U.U_ID=C.PAT_ID AND STAFF_ID = '{$_SESSION['uname']}' 
+            AND DATE >= '{$date}' AND TIME >= '{$time}' ORDER BY DATE, TIME;";
+
+        $appointments = mysqli_query($conn,$qry);
+        require 'views/home_doc_view.php';
+    }
     else
         require 'views/home_user_view.php';
 }

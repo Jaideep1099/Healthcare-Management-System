@@ -10,7 +10,7 @@ if(!loggedin_check($_SESSION)) {
     header("Location: /login");
 }
 else{
-
+    $err_msg="";
     if(isset($_POST['doc_id'])){
         if(empty_check($_POST)){
             $err_msg = "Enter all required data";

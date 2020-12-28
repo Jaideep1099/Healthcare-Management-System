@@ -19,7 +19,7 @@ if(isset($_POST['uname'])) {
 
         $conn = connect_database();
 
-        if($_POST['type']=='S'){
+        if($_POST['type']=='S' || $_POST['type']=='D'){
 
             //Check if claim of being staff is true
 
