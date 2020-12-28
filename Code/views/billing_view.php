@@ -106,7 +106,7 @@
                                 </tr>
                                 <tr class="Continue-Shopping">
                                     <th>Proceed to Checkout</th>
-                                    <td><input type="submit" class="btn btn-send btn-pink" value="CHECKOUT"></td>
+                                    <td><input type="submit" onclick="window.print();" class="btn btn-send btn-pink" value="CHECKOUT"></td>
                                 </tr>
                             </table>
 
