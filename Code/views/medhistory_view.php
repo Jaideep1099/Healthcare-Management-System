@@ -70,7 +70,7 @@
             </form>
             </div>
             <br><br><br> 
-            <div class="container p-5 my-3 bg-info text-white">
+            <div class="container p-5 my-3 bg-info text-white" <?php if($edit==0){?> style="display:none;" <?php } ?> >
             <h1>ADD NEW MEDICAL RECORD</h1>
             <form method="POST" action="">
                 <br><br>

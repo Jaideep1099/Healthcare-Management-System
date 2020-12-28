@@ -8,6 +8,7 @@ if(!sup_loggedin_check($_SESSION)) {
     header("Location: /supplier/login");
 }
 else{
+    $err_msg="";
 
     $ord_id = $_GET['o_id'];
 

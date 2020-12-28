@@ -25,7 +25,7 @@
                         <a class="nav-link" href="#profile">PROFILE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#logout">LOGOUT</a>
+                        <a class="nav-link" href="/logout">LOGOUT</a>
                     </li>
 
                 </ul>
@@ -58,7 +58,7 @@
                         <?php if ($appointments) {
                             while ($row = mysqli_fetch_assoc($appointments)) { ?>
                                 <tr>
-                                    <td><a href="/patient?id=<?=$row['PAT_ID']?>" class="ord-link"><?=$row['PAT_ID']?></a></td>
+                                    <td><a href="/patient?id=<?=$row['CONS_ID']?>" class="ord-link"><?=$row['PAT_ID']?></a></td>
                                     <td><?=$row['DATE']." ".$row['TIME']?></td>
                                     <td><?=$row['SEX']?></td>
                                     <td><?=$row['DOB']?></td>

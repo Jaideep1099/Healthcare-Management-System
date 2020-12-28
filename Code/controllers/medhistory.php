@@ -11,6 +11,8 @@ if(!loggedin_check($_SESSION)) {
 else{
     if(isset($_POST['date'])) {
 
+        $edit=1;
+
         //Input Data Validation 
         if(empty_check($_POST)){
             $err_msg = "Enter data in all required fields";
