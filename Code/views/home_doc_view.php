@@ -50,7 +50,7 @@
                                 <h3>SEX</h3>
                             </th>
                             <th>
-                                <h3>AGE</h3>
+                                <h3>DOB</h3>
                             </th>
                         </tr>
                     </thead>

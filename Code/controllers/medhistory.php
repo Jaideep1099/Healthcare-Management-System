@@ -16,7 +16,7 @@ else{
         //Input Data Validation 
         if(empty_check($_POST)){
             $err_msg = "Enter data in all required fields";
-            require 'views/signup_view.php';
+            require 'views/medhistory_view.php';
         }
         else{
             //Add new record
